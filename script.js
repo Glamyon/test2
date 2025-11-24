@@ -1,13 +1,4 @@
-// ---------------- Hero Background Parallax ----------------
-document.addEventListener("mousemove", (e) => {
-  const bg = document.querySelector(".hero-bg");
-  if (!bg) return;
-  const x = (window.innerWidth / 2 - e.clientX) / 30;
-  const y = (window.innerHeight / 2 - e.clientY) / 30;
-  bg.style.transform = `translate(${x}px, ${y}px)`;
-});
-
-// ---------------- Internationalization Placeholder ----------------
+// ---------------- Internationalization ----------------
 const i18n = {
   en: {
     "hero.title": "Scale Your Business with China’s Top Creative Teams",
@@ -23,7 +14,6 @@ const i18n = {
   }
 };
 
-// Placeholder function to switch language
 function switchLanguage(lang = "en") {
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
@@ -33,5 +23,11 @@ function switchLanguage(lang = "en") {
   });
 }
 
-// Example: switch to Chinese
-// switchLanguage("zh");
+// ---------------- Hero Background Parallax ----------------
+document.addEventListener("mousemove", (e) => {
+  const card = document.querySelector(".hero-card");
+  if (!card) return;
+  const x = (window.innerWidth / 2 - e.clientX) / 50;
+  const y = (window.innerHeight / 2 - e.clientY) / 50;
+  card.style.transform = `translate(${x}px, ${y}px)`;
+});
