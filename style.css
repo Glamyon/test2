@@ -1,82 +1,515 @@
+/* 全局样式 */
+body {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 头部 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-glass);
+  backdrop-filter: blur(var(--blur-glass));
+  border-bottom: 1px solid var(--border-glass);
+  z-index: 1000;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+.nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.language-switcher button {
+  background: var(--bg-glass);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-glass);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+.language-switcher .active {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+/* Hero */
 .hero {
-  min-height: 80vh;
-  padding: 120px 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-left {
+  max-width: 600px;
+}
+.hero-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.stat-card {
+  background: var(--bg-glass);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+/* 认证团队 */
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+.team-card {
+  background: var(--bg-glass);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+.team-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* 热门服务轮播 */
+.carousel {
   position: relative;
   overflow: hidden;
 }
-.hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
 }
-.hero-left {
-  animation: fadeInLeft 1s ease;
-}
-.hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 24px;
-}
-.hero p {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 24px;
-}
-.hero-points {
-  list-style: none;
-  margin: 32px 0;
-}
-.hero-points li {
-  position: relative;
-  padding-left: 28px;
-  margin: 16px 0;
-}
-.hero-points li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--accent-light);
-}
-.btn-primary {
-  padding: 16px 32px;
-  background: var(--accent-blue);
-  color: white;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-.btn-primary:hover {
-  background: var(--accent-light);
-  transform: translateY(-4px);
-  box-shadow: var(--accent-glow);
-}
-.bento-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-.stat-card {
-  background: var(--glass-blue);
-  padding: 24px;
-  border-radius: var(--radius);
+.service-card {
+  min-width: 25%;
+  background: var(--bg-glass);
+  padding: 1rem;
   text-align: center;
-  animation: fadeInRight 1s ease;
+  border-radius: 10px;
 }
-.stat-number {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--text-primary);
+.service-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
 }
-.stat-label {
-  font-size: 1rem;
-  color: var(--text-muted);
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+
+/* 提交项目 */
+.submit-project {
+  display: flex;
+  gap: 2rem;
 }
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(50px); }
-  to { opacity: 1; transform: translateX(0); }
+.submit-left {
+  flex: 1;
 }
+.submit-right {
+  flex: 1;
+  background: var(--bg-glass);
+  border-radius: 10px;
+}
+.submit-right img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* 视频 */
+.video-section {
+  text-align: center;
+}
+.video-player {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 工作流程 */
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.workflow-card {
+  background: var(--bg-glass);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+}
+.workflow-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 优势 */
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.advantage-card {
+  background: var(--bg-glass);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* 客户评价 */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.testimonial-card {
+  background: var(--bg-glass);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--bg-glass);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+.faq-question {
+  padding: 1rem;
+  cursor: pointer;
+}
+.faq-answer {
+  padding: 1rem;
+  display: none;
+}
+
+/* 页脚 */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+.footer-column h4 {
+  margin-bottom: 1rem;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">GOAOXOR</div>
+            <nav class="nav">
+                <a href="#hero">首页</a>
+                <a href="#certified-teams">经过认证的团队</a>
+                <a href="#hot-services">热门服务</a>
+                <a href="#submit-project">提交项目</a>
+                <a href="#workflow">工作流程</a>
+                <a href="#testimonials">客户评价</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="right">
+                <div class="language-switcher">
+                  <button data-lang="en">EN</button>
+                  <button data-lang="zh" class="active">中文</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-left">
+                <h1 class="translatable" data-en="GOAOXOR — Your Gateway to Elite Creative Production" data-zh="GOAOXOR — 连接世界与顶尖华人创意生产力">GOAOXOR — 连接世界与顶尖华人创意生产力</h1>
+                <p class="translatable" data-en="Work with rigorously vetted film, animation, and video teams at 20–50% below global market rates — with guaranteed delivery." data-zh="以比全球市场低 20–50% 的成本，与经过严格筛选的华人影视、动画与视频团队合作，并保证交付。">Work with rigorously vetted film, animation, and video teams at 20–50% below global market rates — with guaranteed delivery.</p>
+                <p class="translatable" data-en="We connect global brands, studios, and agencies with the most reliable Chinese creative teams — managed, verified, and outcome-driven." data-zh="我们为全球品牌、影业公司与创意机构匹配最值得信赖的中国创意团队，全程管理、严格把控、结果导向。">We connect global brands, studios, and agencies with the most reliable Chinese creative teams — managed, verified, and outcome-driven.</p>
+                <button class="btn primary-btn translatable" data-en="Start Your Project" data-zh="开始你的项目">Start Your Project</button>
+            </div>
+            <div class="hero-right">
+                <div class="stat-card">
+                  <div class="stat-number">320+</div>
+                  <div class="stat-label translatable" data-en="Projects Delivered" data-zh="320+ 项真实项目成功交付">Projects Delivered</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">120+</div>
+                  <div class="stat-label translatable" data-en="Certified Creative Teams" data-zh="120+ 认证创意团队">Certified Creative Teams</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">20%–50%</div>
+                  <div class="stat-label translatable" data-en="Cost Reduction for Clients" data-zh="为客户节省 20%–50% 的预算">Cost Reduction for Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certified-teams" class="certified-teams">
+        <div class="container">
+            <h2 class="translatable" data-en="Certified Teams" data-zh="经过认证的团队">Certified Teams</h2>
+            <div class="teams-grid">
+                <a href="team-film-video.html" class="team-card">
+                    <div class="team-icon">🎥</div>
+                    <p class="translatable" data-en="Film & Video" data-zh="影视与视频">Film & Video</p>
+                </a>
+                <a href="team-animation.html" class="team-card">
+                    <div class="team-icon">🎞️</div>
+                    <p class="translatable" data-en="Animation" data-zh="动画">Animation</p>
+                </a>
+                <a href="team-visual-design.html" class="team-card">
+                    <div class="team-icon">🖼️</div>
+                    <p class="translatable" data-en="Visual & Design" data-zh="视觉与设计">Visual & Design</p>
+                </a>
+                <a href="team-audio.html" class="team-card">
+                    <div class="team-icon">🎵</div>
+                    <p class="translatable" data-en="Audio" data-zh="音频">Audio</p>
+                </a>
+                <a href="team-more.html" class="team-card">
+                    <div class="team-icon">➕</div>
+                    <p class="translatable" data-en="More" data-zh="更多">More</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="hot-services" class="hot-services">
+        <div class="container">
+            <h2 class="translatable" data-en="Hot Services" data-zh="热门服务">Hot Services</h2>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="placeholder.jpg" alt="Service 1">
+                        <h3>Film Production</h3>
+                        <p>320+ projects</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="placeholder.jpg" alt="Service 2">
+                        <h3>Animation</h3>
+                        <p>250+ projects</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="placeholder.jpg" alt="Service 3">
+                        <h3>Visual Design</h3>
+                        <p>400+ projects</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="placeholder.jpg" alt="Service 4">
+                        <h3>Audio Production</h3>
+                        <p>200+ projects</p>
+                    </div>
+                </div>
+                <button class="carousel-button prev">←</button>
+                <button class="carousel-button next">→</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="submit-project" class="submit-project">
+        <div class="container">
+            <div class="submit-left">
+                <h2 class="translatable" data-en="Submit Project" data-zh="提交项目">Submit Project</h2>
+                <p class="translatable" data-en="Ready to begin your project? Submit your requirements and get matched with the perfect team." data-zh="准备开始您的项目？提交您的需求，并与完美的团队匹配。">Ready to begin your project? Submit your requirements and get matched with the perfect team.</p>
+                <button class="btn primary-btn translatable" data-en="Submit Now" data-zh="立即提交">Submit Now</button>
+            </div>
+            <div class="submit-right">
+                <img src="placeholder.jpg" alt="Submit Project Image">
+            </div>
+        </div>
+    </section>
+
+    <section id="video" class="video-module">
+        <div class="container">
+            <h2 class="translatable" data-en="Discover GOAOXOR" data-zh="了解 GOAOXOR">Discover GOAOXOR</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/video-id" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="workflow" class="workflow">
+        <div class="container">
+            <h2 class="translatable" data-en="Workflow" data-zh="工作流程">Workflow</h2>
+            <div class="workflow-steps">
+                <div class="step">
+                    <div class="step-icon">1</div>
+                    <p class="translatable" data-en="Client Submits Project Requirements" data-zh="客户提交项目需求">Client Submits Project Requirements</p>
+                    <p class="translatable" data-en="Describe your project and we'll match you with the best team." data-zh="描述您的项目，我们将为您匹配最佳团队。">Describe your project and we'll match you with the best team.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <p class="translatable" data-en="Platform Screens Teams in China" data-zh="平台在中国筛选团队">Platform Screens Teams in China</p>
+                    <p class="translatable" data-en="We select from our certified pool." data-zh="我们从认证池中选择。">We select from our certified pool.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <p class="translatable" data-en="Recommend Matching Teams to Client" data-zh="向客户推荐匹配团队">Recommend Matching Teams to Client</p>
+                    <p class="translatable" data-en="Get 2-3 options with profiles and quotes." data-zh="获取2-3个选项，包括资料和报价。">Get 2-3 options with profiles and quotes.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <p class="translatable" data-en="Client Confirms Team" data-zh="客户确认团队">Client Confirms Team</p>
+                    <p class="translatable" data-en="Review and select your preferred team." data-zh="查看并选择您喜欢的团队。">Review and select your preferred team.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">5</div>
+                    <p class="translatable" data-en="Platform Generates Project Contract" data-zh="平台生成项目合同">Platform Generates Project Contract</p>
+                    <p class="translatable" data-en="Secure contract with clear terms and milestones." data-zh="安全合同，明确条款和里程碑。">Secure contract with clear terms and milestones.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">6</div>
+                    <p class="translatable" data-en="Client and Team Direct Settlement" data-zh="客户与团队直接结算">Client and Team Direct Settlement</p>
+                    <p class="translatable" data-en="Handle payments securely through third-party platforms." data-zh="通过第三方平台安全处理支付。">Handle payments securely through third-party platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="barriers" class="barriers">
+        <div class="container">
+            <h2 class="translatable" data-en="We Remove the Barriers to Global Creative Collaboration" data-zh="我们消除全球创意协作的障碍">We Remove the Barriers to Global Creative Collaboration</h2>
+            <div class="barrier-grid">
+                <div class="barrier-card">
+                    <p class="translatable" data-en="Reduce Costs by 20%-50%" data-zh="降低 20%-50% 成本">Reduce Costs by 20%-50%</p>
+                </div>
+                <div class="barrier-card">
+                    <p class="translatable" data-en="Top Chinese Teams" data-zh="顶尖中国团队">Top Chinese Teams</p>
+                </div>
+                <div class="barrier-card">
+                    <p class="translatable" data-en="International Services" data-zh="国际化服务">International Services</p>
+                </div>
+                <div class="barrier-card">
+                    <p class="translatable" data-en="Strict Review Mechanism" data-zh="严格审核机制">Strict Review Mechanism</p>
+                </div>
+                <div class="barrier-card">
+                    <p class="translatable" data-en="Project Supervision Guarantee" data-zh="项目监督保障">Project Supervision Guarantee</p>
+                </div>
+                <div class="barrier-card">
+                    <p class="translatable" data-en="Multi-domain Experts" data-zh="多领域专家">Multi-domain Experts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="translatable" data-en="Trusted by Global Clients" data-zh="全球客户的信赖">Trusted by Global Clients</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-job translatable" data-en="Marketing Lead" data-zh="营销主管">Marketing Lead</div>
+                    <p class="testimonial-text translatable" data-en="GOAOXOR cut our production cost by 60% while improving creative quality. Their management system made everything predictable and stress-free." data-zh="GOAOXOR 在将我们预算降低 60% 的同时提升了作品质量。他们管理的体系让整个过程完全可控且无压力。">GOAOXOR cut our production cost by 60% while improving creative quality. Their management system made everything predictable and stress-free.</p>
+                    <div class="testimonial-footer">
+                        <img src="image/avatar1.jpg" alt="Avatar">
+                        <p>John Doe</p>
+                    </div>
+                </div>
+                <!-- 更多评价... -->
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="translatable" data-en="FAQ" data-zh="常见问题">FAQ</h2>
+            <div class="faq-item">
+                <div class="faq-question translatable" data-en="What kind of platform are you?" data-zh="你们是什么样的平台？">What kind of platform are you?</div>
+                <div class="faq-answer translatable" data-en="A creative project matching platform, matching top Chinese film, animation, short video teams, providing full process guarantees." data-zh="一个创意项目匹配平台，匹配中国顶尖的影视、动画、短视频团队，提供全程保障。">A creative project matching platform...</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question translatable" data-en="How to handle language communication?" data-zh="如何处理语言沟通？">How to handle language communication?</div>
+                <div class="faq-answer translatable" data-en="Mainly in English, provide Chinese-English translation when necessary, confirm language preferences and time zone arrangements." data-zh="主要使用英语，必要时提供中英翻译，确认语言偏好和时区安排。">Mainly in English, provide Chinese-English...</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question translatable" data-en="How to ensure fund security?" data-zh="如何确保资金安全？">How to ensure fund security?</div>
+                <div class="faq-answer translatable" data-en="Use third-party escrow platforms (e.g., Alipay International, Payoneer), contracts clearly define fund release conditions." data-zh="使用第三方托管平台（如支付宝国际、Payoneer），合同明确规定资金释放条件。">Use third-party escrow platforms...</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question translatable" data-en="Can projects be expedited?" data-zh="项目可以加急吗？">Can projects be expedited?</div>
+                <div class="faq-answer translatable" data-en="Expedited available, feasibility assessed during matching, expedited fees explained (usually +20-50%)." data-zh="可加急，在匹配期间评估可行性，解释加急费用（通常+20-50%）。">Expedited available, feasibility assessed...</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question translatable" data-en="Who owns the intellectual property?" data-zh="知识产权归谁所有？">Who owns the intellectual property?</div>
+                <div class="faq-answer translatable" data-en="After project completion, intellectual property belongs to the client, including source files, contracts clearly state copyright ownership." data-zh="项目完成后，知识产权归客户所有，包括源文件，合同明确规定版权归属。">After project completion, intellectual property...</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4 class="translatable" data-en="About GOAOXOR" data-zh="关于GOAOXOR">About GOAOXOR</h4>
+                    <p class="translatable" data-en="GOAOXOR connects global clients with elite Chinese creative teams for film, animation, and video projects, delivering quality at 20%-50% lower costs." data-zh="GOAOXOR将全球客户与中国顶尖创意团队连接起来，专注于影视、动画和视频项目，以20%-50%的成本提供高质量服务。">GOAOXOR connects global clients with elite Chinese creative teams for film, animation, and video projects, delivering quality at 20%-50% lower costs.</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="translatable" data-en="Explore" data-zh="探索">Explore</h4>
+                    <a href="#certified-teams" class="translatable" data-en="Certified Teams" data-zh="经过认证的团队">Certified Teams</a>
+                    <a href="#hot-services" class="translatable" data-en="Hot Services" data-zh="热门服务">Hot Services</a>
+                    <a href="#submit-project" class="translatable" data-en="Submit Project" data-zh="提交项目">Submit Project</a>
+                    <a href="#workflow" class="translatable" data-en="Workflow" data-zh="工作流程">Workflow</a>
+                    <a href="#faq" class="translatable" data-en="FAQ" data-zh="FAQ">FAQ</a>
+                </div>
+                <div class="footer-column">
+                    <h4 class="translatable" data-en="Connect With Us" data-zh="联系我们">Connect With Us</h4>
+                    <a href="mailto:info@goaoxor.com" class="translatable" data-en="Email: info@goaoxor.com" data-zh="邮箱：info@goaoxor.com"><span class="icon">✉️</span> Email: info@goaoxor.com</a>
+                    <a href="https://www.tiktok.com/@emmamanlay" target="_blank" class="translatable" data-en="TikTok: @emmamanlay" data-zh="TikTok：@emmamanlay"><span class="icon">♪</span> TikTok: @emmamanlay</a>
+                </div>
+                <div class="footer-column">
+                    <h4 class="translatable" data-en="Stay Updated" data-zh="保持更新">Stay Updated</h4>
+                    <p class="translatable" data-en="Subscribe to our newsletter for the latest creative insights." data-zh="订阅我们的时事通讯，获取最新的创意洞察。">Subscribe to our newsletter for the latest creative insights.</p>
+                    <div class="newsletter-signup">
+                        <input type="email" class="translatable" data-en="Your email" data-zh="您的邮箱" placeholder="Your email">
+                        <button class="translatable" data-en="Join Now" data-zh="立即加入">Join Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container translatable" data-en="© 2025 GOAOXOR. All Rights Reserved." data-zh="© 2025 GOAOXOR。版权所有。">© 2025 GOAOXOR. All Rights Reserved.</div>
+    </footer>
+
+    <div class="modal" id="form-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="translatable" data-en="Submit Your Project" data-zh="提交您的项目">Submit Your Project</h3>
+                <button class="modal-close" aria-label="Close modal">×</button>
+            </div>
+            <div class="modal-body">
+                <iframe class="modal-iframe" src="Form/goaoxor-form.html" title="GOAOXOR Project Form" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
