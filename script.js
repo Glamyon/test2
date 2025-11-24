@@ -1,7 +1,6 @@
 // ---------------- Internationalization ----------------
 // ---------------- hero区 首----------------
-// ---------------- Internationalization ----------------
-// ---------------- Internationalization ----------------
+
 const i18n = {
   en: {
     "hero.title":"Scale Your Business with China’s Top Creative Teams",
