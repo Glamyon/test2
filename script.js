@@ -1,28 +1,53 @@
 // ---------------- Internationalization ----------------
 // ---------------- hero区 首----------------
 
-const i18n = {
-  en: {
-    "hero.title":"Scale Your Business with China’s Top Creative Teams",
-    "hero.subtitle":"Get fast, efficient, and affordable project delivery from certified Chinese teams — from design to development, we ensure your project success.",
-    "hero.cta1":"Launch Your Project",
-    "hero.cta2":"Browse Services"
-  },
-  zh: {
-    "hero.title":"与中国顶尖专业团队一起加速您的业务",
-    "hero.subtitle":"通过经过认证的中国团队获得快速、高效且性价比高的项目交付——从设计到开发，确保您的项目成功。",
-    "hero.cta1":"立即开始项目",
-    "hero.cta2":"浏览服务"
-  }
+// Hero 统计动态加载
+function loadHeroStats() {
+  // 未来接口
+  fetch('/api/hero-stats.js')
+    .then(response => response.json())
+    .then(data => {
+      const stats = document.getElementById('hero-stats');
+      stats.innerHTML = `
+        <div class="stat-card">
+          <div class="stat-number">${data.projects}+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">${data.teams}+</div>
+          <div class="stat-label">Certified Creative Teams</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">${data.savings}</div>
+          <div class="stat-label">Cost Reduction for Clients</div>
+        </div>
+      `;
+    })
+    .catch(() => {
+      // 静态 fallback
+      const stats = document.getElementById('hero-stats');
+      stats.innerHTML = `
+        <div class="stat-card">
+          <div class="stat-number">320+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">120+</div>
+          <div class="stat-label">Certified Creative Teams</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">20%–50%</div>
+          <div class="stat-label">Cost Reduction for Clients</div>
+        </div>
+      `;
+    });
+}
+
+// 页面加载
+window.addEventLoad = () => {
+  loadHeroStats();
 };
 
-// 语言切换函数
-function switchLanguage(lang="en"){
-  document.querySelectorAll("[data-i18n]").forEach(el=>{
-    const key=el.getAttribute("data-i18n");
-    if(i18n[lang] && i18n[lang][key]) el.innerText=i18n[lang][key];
-  });
-}
 
 
 // ---------------- hero区 尾----------------
