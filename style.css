@@ -1,59 +1,25 @@
-/* ================= Global Reset ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  background: #f2f4f8;
-  color: #111;
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 1280px;
-  margin: auto;
-  padding: 0 20px;
-}
-
-/* ================= Animations ================= */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.9s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ================= Hero Section ================= */
 .hero {
   position: relative;
   padding: 120px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url('assets/hero-bg.jpg') center/cover no-repeat; /* 可选背景图 */
 }
 
-/* Center Card */
 .hero-card {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; /* 保持图片与文字顶部对齐 */
   gap: 60px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(10, 25, 50, 0.7); /* 深蓝玻璃拟态 */
+  backdrop-filter: blur(12px);
   border-radius: 24px;
   padding: 60px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   max-width: 1200px;
   width: 100%;
-}
-
-.hero-left {
-  max-width: 560px;
+  color: #fff;
 }
 
 .hero-left h1 {
@@ -65,95 +31,29 @@ body {
 .hero-left p {
   font-size: 18px;
   margin-bottom: 32px;
-  color: #444;
+  color: #e0e6f2;
 }
 
-.hero-cta {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 36px;
-}
-
-.cta-btn {
-  padding: 14px 32px;
-  font-size: 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  border: none;
-  transition: 0.25s ease;
-}
-
-.cta-btn.primary {
+.hero-cta .cta-btn.primary {
   background-color: #00a67f;
   color: #fff;
 }
 
-.cta-btn.primary:hover {
-  background-color: #009971;
-}
-
-.cta-btn.secondary {
-  background-color: #fff;
+.hero-cta .cta-btn.secondary {
+  background-color: transparent;
   color: #00a67f;
   border: 2px solid #00a67f;
 }
 
-.cta-btn.secondary:hover {
-  background-color: #00a67f;
+.trust-indicators .trust-card {
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
-}
-
-.trust-indicators {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 16px;
-}
-
-.trust-card {
-  background: #fff;
-  padding: 16px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-  text-align: center;
-  min-width: 120px;
-}
-
-.stat-number {
-  font-size: 24px;
-  font-weight: 700;
-  color: #00a67f;
-}
-
-.stat-label {
-  font-size: 14px;
-  color: #555;
-  display: block;
-  margin-top: 4px;
+  box-shadow: none;
 }
 
 .hero-right img {
   max-width: 500px;
   width: 100%;
   border-radius: 20px;
-}
-
-/* ================= Responsive ================= */
-@media(max-width: 900px) {
-  .hero-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
-  }
-  .hero-left {
-    max-width: 100%;
-  }
-  .trust-indicators {
-    justify-content: center;
-  }
-}
-
-@media(max-width: 600px) {
-  .hero-left h1 { font-size: 32px; }
-  .cta-btn { font-size: 16px; padding: 12px 24px; }
+  display: block;
 }
