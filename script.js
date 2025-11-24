@@ -1,4 +1,5 @@
 // ---------------- Internationalization ----------------
+// ---------------- hero区 首----------------
 const i18n = {
   en: {
     "hero.title": "Scale Your Business with China’s Top Creative Teams",
@@ -31,3 +32,4 @@ document.addEventListener("mousemove", (e) => {
   const y = (window.innerHeight / 2 - e.clientY) / 50;
   card.style.transform = `translate(${x}px, ${y}px)`;
 });
+// ---------------- hero区 尾----------------
