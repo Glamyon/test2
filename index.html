@@ -1,50 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GOAOXOR — Creative Teams</title>
+  <title>GOAOXOR — 跨境创意制作服务平台</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero">
-    <!-- 底层背景层 -->
-    <div class="hero-bg"></div>
-
-    <!-- 文字层 -->
-    <div class="hero-text">
-      <h1 data-i18n="hero.title">Scale Your Business with China’s Top Creative Teams</h1>
-      <p data-i18n="hero.subtitle">
-        Get fast, efficient, and affordable project delivery from certified Chinese teams — from design to development, we ensure your project success.
-      </p>
-    </div>
-
-    <!-- 左下玻璃拟态卡片层 -->
-    <div class="hero-card">
-      <!-- 上半部分：按钮 -->
-      <div class="hero-card-top">
-        <button class="cta-btn primary" data-i18n="hero.cta1">Launch Your Project</button>
-        <button class="cta-btn secondary" data-i18n="hero.cta2">Browse Services</button>
+  <!-- 顶部导航栏（固定） -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">GOAOXOR</div>
+      <nav class="nav">
+        <a href="#hero">首页</a>
+        <a href="#certified-teams">经过认证的团队</a>
+        <a href="#hot-services">热门服务</a>
+        <a href="#submit-project">提交项目</a>
+        <a href="#workflow">工作流程</a>
+        <a href="#testimonials">客户评价</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="right">
+        <div class="language-switcher">
+          <button data-lang="en">EN</button>
+          <button data-lang="zh" class="active">中文</button>
+        </div>
       </div>
-      <!-- 下半部分：信任标示 -->
-      <div class="hero-card-bottom">
-        <div class="trust-card">
-          <span class="stat-number">500+</span>
-          <span class="stat-label">Projects Delivered</span>
+    </div>
+  </header>
+
+  <!-- Hero 区 -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-left">
+        <h1 class="translatable" data-en="GOAOXOR — Your Gateway to Elite Creative Production" data-zh="GOAOXOR — 连接世界与顶尖华人创意生产力">GOAOXOR — 连接世界与顶尖华人创意生产力</h1>
+        <p class="translatable" data-en="Work with rigorously vetted film, animation, and video teams at 20–50% below global market rates — with guaranteed delivery." data-zh="以比全球市场低 20–50% 的成本，与经过严格筛选的华人影视、动画与视频团队合作，并保证交付。">以比全球市场低 20–50% 的成本，与经过严格筛选的华人影视、动画与视频团队合作，并保证交付。</p>
+        <p class="translatable" data-en="We connect global brands, studios, and agencies with the most reliable Chinese creative teams — managed, verified, and outcome-driven." data-zh="我们为全球品牌、影业公司与创意机构匹配最值得信赖的中国创意团队，全程管理、严格把控、结果导向。">我们为全球品牌、影业公司与创意机构匹配最值得信赖的中国创意团队，全程管理、严格把控、结果导向。</p>
+        <button class="btn translatable" data-en="Start Your Project" data-zh="开始你的项目">开始你的项目</button>
+      </div>
+      <div class="hero-right">
+        <div class="stat-card">
+          <div class="stat-number">320+</div>
+          <div class="stat-label translatable" data-en="Projects Delivered" data-zh="项目交付">项目交付</div>
         </div>
-        <div class="trust-card">
-          <span class="stat-number">120+</span>
-          <span class="stat-label">Certified Teams</span>
+        <div class="stat-card">
+          <div class="stat-number">120+</div>
+          <div class="stat-label translatable" data-en="Certified Creative Teams" data-zh="认证创意团队">认证创意团队</div>
         </div>
-        <div class="trust-card">
-          <span class="stat-number">$500k+</span>
-          <span class="stat-label">Client Savings</span>
+        <div class="stat-card">
+          <div class="stat-number">20%–50%</div>
+          <div class="stat-label translatable" data-en="Cost Reduction for Clients" data-zh="客户成本降低">客户成本降低</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- 经过认证的团队 -->
+  <section id="certified-teams" class="certified-teams">
+    <div class="container">
+      <h2>经过认证的团队</h2>
+      <div class="teams-grid">
+        <a href="team-film-video.html" class="team-card">
+          <div class="team-icon">🎥</div>
+          <p class="translatable" data-en="Film & Video" data-zh="影视与视频">影视与视频</p>
+        </a>
+        <a href="team-animation.html" class="team-card">
+          <div class="team-icon">🎞️</div>
+          <p class="translatable" data-en="Animation" data-zh="动画">动画</p>
+        </a>
+        <a href="team-visual-design.html" class="team-card">
+          <div class="team-icon">🖼️</div>
+          <p class="translatable" data-en="Visual & Design" data-zh="视觉与设计">视觉与设计</p>
+        </a>
+        <a href="team-ecommerce.html" class="team-card">
+          <div class="team-icon">🛒</div>
+          <p class="translatable" data-en="E-commerce" data-zh="电商">电商</p>
+        </a>
+        <a href="team-more.html" class="team-card">
+          <div class="team-icon">➕</div>
+          <p class="translatable" data-en="More" data-zh="更多">更多</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门服务模块 -->
+  <section id="hot-services" class="hot-services">
+    <div class="container">
+      <h2>热门服务</h2>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="service-card">
+            <img src="image/service1.jpg" alt="Film Production" class="service-img">
+            <h3>Film Production</h3>
+            <p>500+ Projects | 4.9/5 Rating</p>
+          </div>
+          <div class="service-card">
+            <img src="image/service2.jpg" alt="Animation" class="service-img">
+            <h3>Animation</h3>
+            <p>300+ Projects | 4.8/5 Rating</p>
+          </div>
+          <div class="service-card">
+            <img src="image/service3.jpg" alt="Visual Design" class="service-img">
+            <h3>Visual Design</h3>
+            <p>400+ Projects | 4.9/5 Rating</p>
+          </div>
+          <div class="service-card">
+            <img src="image/service4.jpg" alt="Audio Production" class="service-img">
+            <h3>Audio Production</h3>
+            <p>200+ Projects | 4.7/5 Rating</p>
+          </div>
+        </div>
+        <button class="carousel-prev">←</button>
+        <button class="carousel-next">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 提交项目模块 -->
+  <section id="submit-project" class="submit-project">
+    <div class="container">
+      <div class="submit-left">
+        <h2>提交项目</h2>
+        <p>我们消除全球创意协作的障碍</p>
+        <button class="btn">开始提交</button>
+      </div>
+      <div class="submit-right">
+        <img src="image/submit-project.jpg" alt="Submit Project">
+      </div>
+    </div>
+  </section>
+
+  <!-- 视频模块 -->
+  <section id="video" class="video-section">
+    <div class="container">
+      <h2>了解 GOAOXOR</h2>
+      <div class="video-player">
+        <video controls>
+          <source src="video/intro.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- 工作流程模块 -->
+  <section id="workflow" class="workflow">
+    <div class="container">
+      <h2>工作流程</h2>
+      <div class="workflow-grid">
+        <div class="workflow-card">
+          <div class="workflow-icon">1</div>
+          <p>客户提交项目需求</p>
+        </div>
+        <div class="workflow-card">
+          <div class="workflow-icon">2</div>
+          <p>平台在中国筛选团队</p>
+        </div>
+        <div class="workflow-card">
+          <div class="workflow-icon">3</div>
+          <p>向客户推荐匹配团队</p>
+        </div>
+        <div class="workflow-card">
+          <div class="workflow-icon">4</div>
+          <p>客户确认团队</p>
+        </div>
+        <div class="workflow-card">
+          <div class="workflow-icon">5</div>
+          <p>平台生成项目合同</p>
+        </div>
+        <div class="workflow-card">
+          <div class="workflow-icon">6</div>
+          <p>客户与团队直接结算</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 我们消除全球创意协作的障碍 -->
+  <section id="advantages" class="advantages">
+    <div class="container">
+      <h2>我们消除全球创意协作的障碍</h2>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <p>降低 20%-50% 成本</p>
+        </div>
+        <div class="advantage-card">
+          <p>顶尖中国团队</p>
+        </div>
+        <div class="advantage-card">
+          <p>国际化服务</p>
+        </div>
+        <div class="advantage-card">
+          <p>严格审核机制</p>
+        </div>
+        <div class="advantage-card">
+          <p>项目监督保障</p>
+        </div>
+        <div class="advantage-card">
+          <p>多领域专家</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 全球客户的信赖 -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2>全球客户的信赖</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-job">Marketing Lead</div>
+          <p class="testimonial-text">"GOAOXOR cut our production cost by 60% while improving creative quality. Their management system made everything predictable and stress-free."</p>
+          <div class="testimonial-footer">
+            <img src="image/avatar1.jpg" alt="Avatar">
+            <p>John Doe</p>
+          </div>
+        </div>
+        <!-- 更多评价卡片... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2>FAQ</h2>
+      <div class="faq-item">
+        <div class="faq-question">问题1</div>
+        <div class="faq-answer">答案1</div>
+      </div>
+      <!-- 更多 FAQ... -->
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4>About GOAOXOR</h4>
+          <p>GOAOXOR connects global clients with elite Chinese creative teams for film, animation, and video projects, delivering quality at 20%-50% lower costs.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <a href="#certified-teams">经过认证的团队</a>
+          <a href="#hot-services">热门服务</a>
+          <a href="#submit-project">提交项目</a>
+          <a href="#workflow">工作流程</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-column">
+          <h4>Connect With Us</h4>
+          <a href="mailto:info@goaoxor.com">邮箱: info@goaoxor.com</a>
+          <a href="https://www.tiktok.com/@emmamanlay">TikTok: @emmamanlay</a>
+        </div>
+        <div class="footer-column">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to our newsletter for the latest creative insights.</p>
+          <input type="email" placeholder="Your email">
+          <button>Join Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 GOAOXOR. All Rights Reserved.
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
