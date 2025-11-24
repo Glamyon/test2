@@ -1,5 +1,6 @@
 // ---------------- Internationalization ----------------
 // ---------------- hero区 首----------------
+// ---------------- Internationalization ----------------
 const i18n = {
   en: {
     "hero.title": "Scale Your Business with China’s Top Creative Teams",
@@ -15,6 +16,7 @@ const i18n = {
   }
 };
 
+// 切换语言函数
 function switchLanguage(lang = "en") {
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
@@ -22,7 +24,7 @@ function switchLanguage(lang = "en") {
   });
 }
 
-// Hero Card Parallax
+// Hero 卡片 parallax
 document.addEventListener("mousemove", (e) => {
   const card = document.querySelector(".hero-card");
   if (!card) return;
