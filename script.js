@@ -18,13 +18,11 @@ const i18n = {
 function switchLanguage(lang = "en") {
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
-    if (i18n[lang] && i18n[lang][key]) {
-      el.innerText = i18n[lang][key];
-    }
+    if (i18n[lang] && i18n[lang][key]) el.innerText = i18n[lang][key];
   });
 }
 
-// ---------------- Hero Background Parallax ----------------
+// Hero Card Parallax
 document.addEventListener("mousemove", (e) => {
   const card = document.querySelector(".hero-card");
   if (!card) return;
@@ -32,4 +30,5 @@ document.addEventListener("mousemove", (e) => {
   const y = (window.innerHeight / 2 - e.clientY) / 50;
   card.style.transform = `translate(${x}px, ${y}px)`;
 });
+
 // ---------------- hero区 尾----------------
